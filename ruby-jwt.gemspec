@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.description = 'A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard.'
   spec.homepage = 'https://github.com/jwt/ruby-jwt'
   spec.license = 'MIT'
-  spec.required_ruby_version = '>= 2.1'
+  spec.required_ruby_version = '>= 1.9.3'
   spec.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(spec|gemfiles|coverage|bin)/}) }
   spec.executables = []
   spec.test_files = spec.files.grep(%r{^(test|spec|features)/})
