@@ -84,7 +84,7 @@ module JWT
           # See https://tools.ietf.org/html/rfc7518#section-6.2.1 for an
           # explanation of the relevant parameters.
 
-          jwk_crv, jwk_x, jwk_y, jwk_d, jwk_kid = jwk_attrs(jwk_data, %i[crv x y d kid])
+          jwk_crv, jwk_x, jwk_y, jwk_d, jwk_kid = jwk_attrs(jwk_data, [:crv, :x, :y, :d, :kid])
           raise JWT::JWKError, 'Key format is invalid for EC' unless jwk_crv && jwk_x && jwk_y
 
           new(ec_pkey(jwk_crv, jwk_x, jwk_y, jwk_d), jwk_kid)
