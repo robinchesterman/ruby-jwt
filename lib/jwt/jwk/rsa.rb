@@ -6,7 +6,7 @@ module JWT
       BINARY = 2
       KTY    = 'RSA'.freeze
       KTYS   = [KTY, OpenSSL::PKey::RSA].freeze
-      RSA_KEY_ELEMENTS = %i[n e d p q dp dq qi].freeze
+      RSA_KEY_ELEMENTS = [:n, :e, :d, :p, :q, :dp, :dq, :qi].freeze
 
       def initialize(keypair, kid = nil)
         raise ArgumentError, 'keypair must be of type OpenSSL::PKey::RSA' unless keypair.is_a?(OpenSSL::PKey::RSA)
