@@ -2,10 +2,10 @@ require_relative './error'
 
 module JWT
   class ClaimsValidator
-    NUMERIC_CLAIMS = %i[
-      exp
-      iat
-      nbf
+    NUMERIC_CLAIMS = [
+      :exp,
+      :iat,
+      :nbf
     ].freeze
 
     def initialize(payload)
